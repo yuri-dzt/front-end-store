@@ -12,4 +12,216 @@ body{
     background-image: linear-gradient(45deg, #2F1673, #793DAB);
     width: 100vw;
     height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#products{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+#products .container{
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+#products .container nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    gap: 40px;
+    width: 85%;
+}
+
+#products .container nav span{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: .75rem;
+    position: relative;
+    padding-bottom: .5rem;
+    cursor: pointer;
+}
+
+#products .container nav span::after{
+    content: ' ';
+    display: block;
+    width: 0%;
+    height: 1px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#products .container nav span h1{
+    color: #fff;
+    font-size:14px;
+    font-weight: 600;
+}
+
+#products .container nav span:nth-child(1){
+    opacity: 40%;
+
+}
+
+#products .container nav span:nth-child(2)::after{
+    width: 100%;
+
+}
+
+#products .container nav span:nth-child(1):hover::after{
+  width: 100%;
+  transition: all .5s ease;
+}
+
+#products .container .content{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 58px;
+    width: 80%;
+}
+
+#products .container .content .list{
+    width: 772px;
+    height: 460px;
+    background-color: #fff;
+    display: flex;
+    align-items: start  ;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+#products .container .content .list .titles {
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 50px;
+    padding-top: 29px;
+}
+
+#products .container .content .list .titles::after {
+    content: '';
+    display: block;
+    background-color: #858585;
+    position: absolute;
+    bottom: -25%;
+    right: auto;
+    width: 95%;
+    height: 2px;
+}
+
+#products .container .content .list .titles span {
+
+}
+
+#products .container .content .list .titles .description {
+padding-right: 2rem;
+padding-left: 2rem;
+}
+
+#products .container .content form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+#products .container .content form div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+#products .container .content form input{
+    height: 53px;
+    width: 100%;
+    background-color: #fff;
+    color: #a3a3a3;
+    border-radius: 8px;
+    padding-left: 14px;
+    font-size: 12px;
+}
+
+#products .container .content form input[type='file'] {
+    opacity: 0;
+    z-index: 2;
+    position: absolute;
+    width: 319px;
+    height: 53px;
+    cursor: pointer;
+}
+
+#products .container .content form .fileType{
+    width: 319px;
+    position: relative;
+}
+
+#products .container .content form label{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    height: 53px;
+    width: 319px;
+    background-color: #fff;
+    color: #a3a3a3;
+    border-radius: 8px;
+    padding-left: 14px;
+    font-size: 12px;
+    z-index: 1;
+}
+
+#products .container .content form input::placeholder{
+    color: #a3a3a3;
+    font-size: 12px;
+}
+
+#products .container .content form textarea::placeholder{
+    color: #a3a3a3;
+    font-size: 12px;
+}
+
+#products .container .content form textarea {
+    height: 136px;
+    width: 100%;
+    background-color: #fff;
+    color: #a3a3a3;
+    border-radius: 8px;
+    padding-left: 14px;   
+    padding-top: 14px;   
+    font-size: 12px;
+}
+
+#products .container .content form button {
+     border-radius: 8px;
+     width: 100%;
+     height: 53px;
+     background-color: #008DFF;
+     color: #fff;
+}
+
+#products .container .content .list .list   Items .circle{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #d9d9d9;
+    display: block;
 }
