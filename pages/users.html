@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="PT-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loja</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -13,38 +13,31 @@
     <section id="products">
         <div class="container">
             <nav>
-                <a href="pages/users.html">
                 <span>
-                    <img src="./images/user.svg" alt="Usuários">
+                    <img src="../images/user.svg" alt="Usuários">
                     <h1>Usuários</h1>
                 </span>
-            </a>
-                <span>
-                    <img src="./images/products.svg" alt="Produtos">
-                    <h1>Produtos</h1>
-                </span>
+                <a href="../index.html">
+
+                    <span>
+                        <img src="../images/products.svg" alt="Produtos">
+                        <h1>Produtos</h1>
+                    </span>
+                </a>
             </nav>
             <div class="content">
                 <div class="list">
                     <div class="titles">
                         <span>
-                            Imagem
+                            Nome
                         </span>
                         <span>
-                            Título
+                            Email
                         </span>
                         <span class="description">
-                            Descrição
+                            Idade
                         </span>
-                        <span>
-                            Preço
-                        </span>
-                        <span>
-                            Marca
-                        </span>
-                        <span>
-                            Categoria
-                        </span>
+                       
                     </div>
                     <div class="listItems">
                         <div class="circle">
@@ -54,16 +47,16 @@
                 </div>
                 <form action="">
                     <div>
-                        <input type="text" placeholder="Título:">
-                        <input type="text" placeholder="Preço:">
+                        <input type="text" placeholder="Nome:">
+                        <input type="text" placeholder="Sobrenome:">
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Email:">
+                        <input type="number" placeholder="Idade:">
                     </div>
                     <div class="fileType">
                         <label for="">Escolha sua logo:</label>
                         <input type="file">
-                    </div>
-                    <div>
-                        <input type="text" placeholder="Marca:">
-                        <input type="text" placeholder="Categoria:">
                     </div>
                     <textarea placeholder="Descrição:"></textarea>
                     <button>Criar Usuário</button>
