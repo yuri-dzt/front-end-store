@@ -29,6 +29,9 @@
                 <div class="list">
                     <div class="titles">
                         <span>
+                            Foto
+                        </span>
+                        <span>
                             Nome
                         </span>
                         <span>
@@ -39,30 +42,38 @@
                         </span>
                        
                     </div>
-                    <div class="listItems">
-                        <div class="circle">
-                            
-                        </div>
+                    <div class="listUsers">
+                    
                     </div>
                 </div>
-                <form action="">
+                <form class="add_user_input" >
                     <div>
-                        <input type="text" placeholder="Nome:">
-                        <input type="text" placeholder="Sobrenome:">
-                    </div>
+                        <input id="nameInput" type="text" placeholder="Nome:">
+                        <input id="lastNameInput" type="text" placeholder="Sobrenome:">
+                    </div >
                     <div>
-                        <input type="text" placeholder="Email:">
-                        <input type="number" placeholder="Idade:">
+                        <input id="ageInput" style="width: 20%;" type="number" placeholder="Idade:" min=0 max="120" maxlength="3">
+                        <input id="phoneInput" style="width: 80%;" type="number" placeholder="Telefone:">
                     </div>
+                        <input autocomplete="username" id="emailInput" type="text" placeholder="Email:">
+                        <div>
+                            <input autocomplete="current-password" id="passwordinput" type="password" placeholder="Senha:" >
+                            <select  name="sex"   id="sexSelect">
+                                <option value="">Sexo</option>
+                                <option value="male" >Masculino</option>
+                                <option value="famle">Feminino</option>
+                            </select>
+                        </div>
                     <div class="fileType">
                         <label for="">Escolha sua logo:</label>
-                        <input type="file">
+                        <input  id="imageInput" type="file">
                     </div>
-                    <textarea placeholder="Descrição:"></textarea>
-                    <button>Criar Usuário</button>
+
+                    <button type="button" id="inputButton">Criar Usuário</button>
                 </form>
             </div>
         </div>
     </section>
+    <script src="../scripts/userScript.js" ></script>
 </body>
 </html>

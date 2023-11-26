@@ -145,7 +145,9 @@ body{
 #products .container .content form .fileType{
     width: 100%;
     position: relative;
+    display: flex;
 }
+
 
 #products .container .content form label{
     display: flex;
@@ -265,4 +267,72 @@ body{
     background-color: #fff;
     position: relative;
     object-fit: contain;
+}
+
+.listUsers{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    overflow-y: scroll;
+    padding-right: 8px;
+}
+
+.user{
+    display: flex;
+    border-radius: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    width: 100%;
+    background-color: #d3d1d1;
+}
+.user img{
+    display: flex;
+   width: 50px;
+   height: 50px;
+   object-fit: contain;
+   background-color: #fff;
+   border-radius: 50%;
+}
+.user .text{
+   text-align: left;
+   font-size: 12px;
+}
+
+.add_user_input{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+}
+
+.add_user_input .image{
+   height: 120px;
+   display: flex;
+}
+
+.add_user_input .image label{
+   height: 100% !important;
+   width: 100% !important;
+}
+
+.add_user_input .image input{
+   height: 100% !important;
+   width: 100% !important;
+}
+
+select{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    height: 53px;
+    width: 50%;
+    background-color: #fff;
+    color: #a3a3a3;
+    border-radius: 8px;
+    padding-left: 14px;
+    font-size: 12px;
+    z-index: 1;
 }
