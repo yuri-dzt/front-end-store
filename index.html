@@ -33,7 +33,7 @@
                         <span>
                             Título
                         </span>
-                        <span class="description">
+                        <span class="descriptionTitle">
                             Descrição
                         </span>
                         <span>
@@ -47,29 +47,30 @@
                         </span>
                     </div>
                     <div class="listItems">
-                        <div class="circle">
-                            
-                        </div>
                     </div>
                 </div>
-                <form action="">
+                <form>
                     <div>
-                        <input type="text" placeholder="Título:">
-                        <input type="text" placeholder="Preço:">
+                        <input id="titleInput" type="text" placeholder="Título:">
+                        <input id="priceInput" type="text" placeholder="Preço:">
                     </div>
                     <div class="fileType">
-                        <label for="">Escolha sua logo:</label>
-                        <input type="file">
+                        <label for="">Escolha sua imagem:</label>
+                        <input id="imgInput" type="file">
                     </div>
                     <div>
-                        <input type="text" placeholder="Marca:">
-                        <input type="text" placeholder="Categoria:">
+                        <input id="brandInput" type="text" placeholder="Marca:">
+                        <input id="categoryInput" type="text" placeholder="Categoria:">
                     </div>
-                    <textarea placeholder="Descrição:"></textarea>
-                    <button>Criar Usuário</button>
+                    <textarea 
+                    id="descriptionInput"
+                    placeholder="Descrição:"></textarea>
+                    <button id="inputButton">Criar Usuário</button>
                 </form>
             </div>
         </div>
     </section>
+
+    <script src="./script.js"></script>
 </body>
 </html>
