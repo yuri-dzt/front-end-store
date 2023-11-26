@@ -188,6 +188,12 @@ body{
      height: 53px;
      background-color: #008DFF;
      color: #fff;
+     cursor: pointer;
+     transition: all .5s ease;
+}
+
+#products .container .content form button:hover {
+    transform: translateY(-3px) scale(.98);
 }
 
 #products .container .content .list{
@@ -252,11 +258,11 @@ body{
     font-size: 10px;
 }
 
-#products .container .content .list .listItems .item .circle{
+#products .container .content .list .listItems .item .productImage{
     width: 80px;
     height: 80px;
     display: block;
-    background-color: #d9d9d9;
+    background-color: #fff;
     position: relative;
-    border-radius: 50%;
+    object-fit: contain;
 }
