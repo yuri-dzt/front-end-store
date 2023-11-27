@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section id="products">
+        <div class="container">
+            <nav>
+                <span>
+                    <img src="../images/user.svg" alt="Usuários">
+                    <h1>Usuários</h1>
+                </span>
+                <a href="../index.html">
+
+                    <span>
+                        <img src="../images/products.svg" alt="Produtos">
+                        <h1>Produtos</h1>
+                    </span>
+                </a>
+            </nav>
+            <div class="content">
+                <div class="list">
+                    <div class="titles">
+                        <span>
+                            Foto
+                        </span>
+                        <span>
+                            Nome
+                        </span>
+                        <span>
+                            Email
+                        </span>
+                        <span class="description">
+                            Idade
+                        </span>
+                       
+                    </div>
+                    <div class="listUsers">
+                    
+                    </div>
+                </div>
+                <form class="add_user_input" >
+                    <div>
+                        <input id="nameInput" type="text" placeholder="Nome:">
+                        <input id="lastNameInput" type="text" placeholder="Sobrenome:">
+                    </div >
+                    <div>
+                        <input id="ageInput" style="width: 20%;" type="number" placeholder="Idade:" min=0 max="120" maxlength="3">
+                        <input id="phoneInput" style="width: 80%;" type="number" placeholder="Telefone:">
+                    </div>
+                        <input autocomplete="username" id="emailInput" type="text" placeholder="Email:">
+                        <div>
+                            <input autocomplete="current-password" id="passwordinput" type="password" placeholder="Senha:" >
+                            <select  name="sex"   id="sexSelect">
+                                <option value="">Sexo</option>
+                                <option value="male" >Masculino</option>
+                                <option value="famle">Feminino</option>
+                            </select>
+                        </div>
+                    <div class="fileType">
+                        <label for="">Escolha sua logo:</label>
+                        <input  id="imageInput" type="file">
+                    </div>
+
+                    <button type="button" id="inputButton">Criar Usuário</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script src="../scripts/userScript.js" ></script>
+</body>
+</html>
