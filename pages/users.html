@@ -57,7 +57,7 @@
                     </div>
                         <input autocomplete="username" id="emailInput" type="text" placeholder="Email:">
                         <div>
-                            <input autocomplete="current-password" id="passwordinput" type="password" placeholder="Senha:" >
+                            <input autocomplete="current-password" id="passwordInput" type="password" placeholder="Senha:" >
                             <select  name="sex"   id="sexSelect">
                                 <option value="">Sexo</option>
                                 <option value="male" >Masculino</option>
@@ -65,7 +65,11 @@
                             </select>
                         </div>
                     <div class="fileType">
-                        <label for="">Escolha sua logo:</label>
+                        <label style="display:flex; height: 150px; padding: 10 5; justify-content: center;" for="">
+                            <span id="imageSpan">Escolha sua logo:</span>
+                            <img id="previewImage" src="" alt="img" style="display:none; max-height: 150px;">
+
+                        </label>
                         <input  id="imageInput" type="file">
                     </div>
 
