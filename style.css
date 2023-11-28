@@ -138,6 +138,7 @@ body{
     position: relative;
     padding-bottom: .5rem;
     cursor: pointer;
+    opacity: 40%;
 }
 
 #products .container nav span::after{
@@ -157,9 +158,8 @@ body{
     font-weight: 600;
 }
 
-#products .container nav span:nth-child(1){
-    opacity: 40%;
-
+#products .container nav #actived{
+ opacity: 100%;
 }
 
 #products .container nav span:nth-child(2)::after{
