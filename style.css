@@ -28,6 +28,79 @@ body{
     justify-content: center;
 }
 
+#home {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+  
+#home .container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+
+}
+
+#home .container .title{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+#home .container .title h1{
+    color: #fff;
+    text-align: center;
+    font-size: 48px;
+    font-weight: 800;
+
+}
+
+#home .container .title h2{
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    width: 45%;
+}
+
+#home .container .btns{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+#home .container .btns a button{
+    width: 347px;
+    height: 48px;
+    border-radius: 30px;
+    background-color: #008DFF;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 300;
+    transition: all .5s ease;
+    cursor: pointer;
+}
+
+#home .container .btns a .users{
+    background-color: #ffffff28;
+    border: 1px solid #fff;
+}
+
+#home .container .btns a button:hover {
+    transform: translateY(-3px);
+}
+
 #products{
     width: 100%;
     height: 100vh;
@@ -242,12 +315,24 @@ body{
     width: 100%;
     overflow-y: scroll;
     padding: 0 1rem;
+    position: relative;
+}
+
+#products .container .content .list .listItems ::after{
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: #858585 ;
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
 }
 
 #products .container .content .list .listItems .item{
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: .8fr .8fr .8fr .8fr .8fr .8fr .2fr;
     place-items: center;
     position: relative;
     gap: 20px;
@@ -268,6 +353,32 @@ body{
     position: relative;
     object-fit: contain;
 }
+
+#products .container .content .list .listItems .item .removeItem {
+    font-size: 20px;
+    background-color: transparent;
+    cursor: pointer;
+    position: relative;
+}
+
+#products .container .content .list .listItems .item .removeItem::after {
+    content: '';
+    display: block;
+    width: 2px;
+    height: 15px;
+    background-color: #858585;
+    transform: rotate(45deg) translateY(-5px) translateX(-5px);
+}
+
+#products .container .content .list .listItems .item .removeItem::before {
+    content: '';
+    display: block;
+    width: 2px;
+    height: 15px;
+    background-color: #858585;
+    transform: rotate(-45deg) translateY(-5px) translateX(5px);
+}
+
 
 .listUsers{
     width: 90%;
