@@ -13,7 +13,9 @@ fetch(apiUrl)
 })
 .then(data => {
     data.forEach((e) => {
+      if(e.isDeleted === false) return
       const item = document.createElement(`div`)
+      item.setAttribute('id', `${e.id}`)
       item.classList.add(`item`)
       item.innerHTML = `<img src='${e.images[0]}'  class="productImage"></img>
       <div class="title">${e.title}</div>
@@ -21,12 +23,22 @@ fetch(apiUrl)
       <div class="price">US$ ${e.price}</div>
       <div class="brand">${e.brand}</div>
       <div class="category">${e.category}</div>
-      <button class='removeItem'></button>
+      <button onclick={removeItem(${e.id})} class='removeItem'></button>
       `
       list.appendChild(item)
     })
     
 })
+
+const removeItem = (id) => {
+  fetch(`https://dummyjson.com/products/${id}`,{
+    method: "DELETE"
+  }).then(res => res.json())
+  .then(e =>{
+      const diference = 30 - list.children.length
+    list.removeChild(list.children[e.id -1 -diference ])
+  })
+}
 
 // ↓↓ CREATING A ITEM WITH EACH  INPUT VALUES ↓↓
 
