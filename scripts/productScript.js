@@ -22,10 +22,11 @@ fetch(apiUrl)
 })
 .then(data => {
   return data.products
-})
+
 .then(products => {
     products.forEach(product => {
       const item = document.createElement(`div`)
+      item.setAttribute('id', `${e.id}`)
       item.classList.add(`item`)
       item.innerHTML = `<img src='${product.images[0]}'  class="productImage"></img>
       <div class="title">${product.title}</div>
@@ -40,6 +41,16 @@ fetch(apiUrl)
     })
     
 })
+
+const removeItem = (id) => {
+  fetch(`https://dummyjson.com/products/${id}`,{
+    method: "DELETE"
+  }).then(res => res.json())
+  .then(e =>{
+      const diference = 30 - list.children.length
+    list.removeChild(list.children[e.id -1 -diference ])
+  })
+}
 
 // ↓↓ CREATING A ITEM WITH EACH  INPUT VALUES ↓↓
 

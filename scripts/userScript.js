@@ -13,10 +13,22 @@ fetch(apiUrl).then((response) => {
         <span class="text">${`${user.firstName} ${user.lastName}`}</span>
         <span class="text">${user.email}</span>
         <span class="text"> ${user.age} anos</span>
+        <button onclick={removeUser(${user.id})} class='removeItem deleteButton'>X</button>
         `
         list.appendChild(item)
     });
 })
+
+const removeUser = (id) => {
+
+    fetch(`https://dummyjson.com/users/${id}`,{
+      method: "DELETE"
+    }).then(res => res.json())
+    .then(e =>{
+        const diference = 30 - list.children.length
+      list.removeChild(list.children[e.id -1 -diference ])
+    })
+  }
 
 let imageURL = ''
 
