@@ -2,18 +2,6 @@ const list = document.querySelector('.listItems')
 
 const apiUrl = `https://dummyjson.com/products`
 
-
-const deleteProduct = (id) => {
-  fetch(`https://dummyjson.com/products/${id}`, {
-    method: 'DELETE',
-  })
-  .then(res => res.json())
-  .then(e => {
-    const diference = 30 - list.children.length
-    list.removeChild(list.children[e.id -1 -diference])
-  })
-}
-
   // ↓↓ GETING DATA FROM THE API AND CREATING AN ITEM FOR EACH RESPONSE ↓↓
 
 fetch(apiUrl)
@@ -22,21 +10,21 @@ fetch(apiUrl)
 })
 .then(data => {
   return data.products
-
-.then(products => {
-    products.forEach(product => {
+})
+.then(data => {
+    data.forEach((e) => {
+      if(e.isDeleted === false) return
       const item = document.createElement(`div`)
       item.setAttribute('id', `${e.id}`)
       item.classList.add(`item`)
-      item.innerHTML = `<img src='${product.images[0]}'  class="productImage"></img>
-      <div class="title">${product.title}</div>
-      <div class="description">${product.description}</div>
-      <div class="price">US$ ${product.price}</div>
-      <div class="brand">${product.brand}</div>
-      <div class="category">${product.category}</div>
-      <button class='removeItem'></button>
+      item.innerHTML = `<img src='${e.images[0]}'  class="productImage"></img>
+      <div class="title">${e.title}</div>
+      <div class="description">${e.description}</div>
+      <div class="price">US$ ${e.price}</div>
+      <div class="brand">${e.brand}</div>
+      <div class="category">${e.category}</div>
+      <button onclick={removeItem(${e.id})} class='removeItem'></button>
       `
-    
       list.appendChild(item)
     })
     
@@ -54,8 +42,30 @@ const removeItem = (id) => {
 
 // ↓↓ CREATING A ITEM WITH EACH  INPUT VALUES ↓↓
 
+let imageURL = ''
+
+    const imageInput = document.getElementById('imageInput');
+    const previewImage = document.getElementById('previewImage');
+
+    imageInput.addEventListener('change', function () {
+        const file = imageInput.files[0];
+        const imageSpan = document.querySelector("#imageSpan")
+        imageSpan.innerHTML = ' '
+
+        if (file) {
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                previewImage.src = e.target.result;
+                imageURL = e.target.result
+                previewImage.style.display = 'block';
+            };
+
+            reader.readAsDataURL(file);
+        }
+    })
+
 const createProduct = () => { 
-  const imgInput = document.querySelector('#imgInput').value
   const titleInput = document.querySelector('#titleInput').value
   const descriptionInput = document.querySelector('#descriptionInput').value
   const priceInput = document.querySelector('#priceInput').value
@@ -67,7 +77,7 @@ const createProduct = () => {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      images: imgInput,
+      images: imageURL,
       title: titleInput,
       description: descriptionInput,
       price: priceInput,
@@ -95,11 +105,8 @@ const createProduct = () => {
   );
 }
 
-
-
 const btn = document.querySelector('#inputButton')
 
-btn.onclick = () => {
-    createProduct()
+btn.onclick = function() {
+  createProduct()
 }
-
