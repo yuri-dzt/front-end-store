@@ -5,10 +5,13 @@ const apiUrl = `https://dummyjson.com/products`
 
 const deleteProduct = (id) => {
   fetch(`https://dummyjson.com/products/${id}`, {
-    method: `DELETE`,
+    method: 'DELETE',
   })
   .then(res => res.json())
-  .then(res => console.log(res))
+  .then(e => {
+    const diference = 30 - list.children.length
+    list.removeChild(list.children[e.id -1 -diference])
+  })
 }
 
   // ↓↓ GETING DATA FROM THE API AND CREATING AN ITEM FOR EACH RESPONSE ↓↓
@@ -30,8 +33,9 @@ fetch(apiUrl)
       <div class="price">US$ ${product.price}</div>
       <div class="brand">${product.brand}</div>
       <div class="category">${product.category}</div>
-      <button onclick={deleteProduct(${product.id})} class='removeItem'></button>
+      <button class='removeItem'></button>
       `
+    
       list.appendChild(item)
     })
     
@@ -72,13 +76,15 @@ const createProduct = () => {
       <div class="price">US$ ${product.price}</div>
       <div class="brand">${product.brand}</div>
       <div class="category">${product.category}</div>
-      <button onclick={deleteProduct(${product.id})} class='removeItem'></button>
+      <button class='removeItem'></button>
       `
       list.appendChild(newProduct)
   }
     
   );
 }
+
+
 
 const btn = document.querySelector('#inputButton')
 
