@@ -55,8 +55,12 @@
                         <input id="priceInput" type="number" placeholder="Preço:">
                     </div>
                     <div class="fileType">
-                        <label for="">Escolha sua imagem:</label>
-                        <input id="imgInput" type="file">
+                        <label style="display:flex; height: 150px; padding: 10 5; justify-content: center;" for="">
+                            <span id="imageSpan">Escolha sua logo:</span>
+                            <img id="previewImage" src="" alt="img" style="display:none; max-height: 150px;">
+
+                        </label>
+                        <input  id="imageInput" type="file">
                     </div>
                     <div>
                         <input id="brandInput" type="text" placeholder="Marca:">
